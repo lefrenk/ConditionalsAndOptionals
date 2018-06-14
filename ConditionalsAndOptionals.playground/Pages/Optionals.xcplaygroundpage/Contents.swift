@@ -8,6 +8,8 @@
  Declare a constant `userInputAge` of type `String` and assign it "34e" to simulate a typo while typing age. Then declare a constant `userAge` of type `Int` and use the `Int` initializer and pass in `userInputAge`. What error do you get?
  */
 
+let userInputAge: String = "34e"
+let userAge: Int? = Int(userInputAge)
 
 /*:
  Go back and change the type of `userAge` to `Int?`, and print the value of `userAge`. Why is `userAge`'s value `nil`? Provide your answer in a comment or print statement below.
@@ -24,6 +26,12 @@
 /*:
  Now use optional binding to unwrap `userAge`. If `userAge` has a value, print it to the console.
  */
+
+if let unwrappedUserAge = userAge {
+    print(unwrappedUserAge)
+} else {
+    print("userAge must be an Int")
+}
 
 
 //: [Previous](@previous)  | page 8 of 9  |  [Next: Finding a Heart Rate](@next)
